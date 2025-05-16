@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Incident Details</h2>
+<ul>
+    <li><strong>Event ID:</strong> {{ incident[0] }}</li>
+    <li><strong>Source IP:</strong> {{ incident[1] }}</li>
+    <li><strong>Destination IP:</strong> {{ incident[2] }}</li>
+    <li><strong>Attack Type:</strong> {{ incident[3] }}</li>
+    <li><strong>Attack Severity:</strong> {{ incident[4] }}</li>
+</ul>
+
+<h3>Response</h3>
+{% if response %}
+<ul>
+    <li><strong>Data Exfiltrated:</strong> {{ response[2] }}</li>
+    <li><strong>Threat Intelligence:</strong> {{ response[3] }}</li>
+    <li><strong>Response Action:</strong> {{ response[4] }}</li>
+</ul>
+{% else %}
+<p>No response data available.</p>
+{% endif %}
+{% endblock %}

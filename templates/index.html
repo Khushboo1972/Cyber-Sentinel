@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>All Incidents</h2>
+<ul class="incident-list">
+    {% for incident in incidents %}
+        <li>
+            <a href="/incident/{{ incident[0] }}">
+                Event {{ incident[0] }}: {{ incident[3] }} (Severity: {{ incident[4] }})
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
